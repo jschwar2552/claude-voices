@@ -2,6 +2,8 @@
 
 Showcasing the impact of Claude through user success stories and interviews.
 
+🚀 **Live Demo**: [https://jschwar2552.github.io/claude-voices](https://jschwar2552.github.io/claude-voices)
+
 ## About
 
 Claude Voices is a platform that highlights how different users leverage Claude for their work, featuring stories from:
