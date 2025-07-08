@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Voices | Success Stories</title>
+    <title>Claude Voices - Super User Interviews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        
         :root {
             --primary-black: #141413;
             --gray-950: #5E5D59;
@@ -17,6 +16,7 @@
             --gray-100: #EDECE8;
             --off-white: #FAF9F5;
             --pure-white: #FFFFFF;
+            --accent-orange: #D97B4A;
         }
 
         * {
@@ -26,538 +26,777 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background: var(--off-white);
             color: var(--primary-black);
             line-height: 1.6;
+            font-size: 16px;
         }
 
+        /* Header */
         .header {
             background: var(--pure-white);
             border-bottom: 1px solid var(--gray-100);
-            padding: 24px;
-            text-align: center;
+            padding: 24px 0;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .header h1 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .header p {
-            color: var(--gray-700);
-            font-size: 14px;
-        }
-
-        .nav {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-            margin-top: 16px;
-        }
-
-        .nav button {
-            background: transparent;
-            border: none;
-            padding: 8px 24px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--gray-700);
-            transition: all 0.2s;
-        }
-
-        .nav button:hover {
-            color: var(--primary-black);
-        }
-
-        .nav button.active {
-            background: var(--pure-white);
-            color: var(--primary-black);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .container {
-            max-width: 1200px;
+        .header-content {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 48px 24px;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .header-nav a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover {
+            color: var(--primary-black);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Hero Section */
         .hero {
+            padding: 80px 0 40px;
             text-align: center;
-            margin-bottom: 64px;
         }
 
-        .hero h2 {
+        .hero h1 {
             font-size: 48px;
             font-weight: 700;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+            line-height: 1.1;
         }
 
         .hero p {
             font-size: 20px;
             color: var(--gray-700);
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 600px;
+            margin: 0 auto 40px;
         }
 
-        .section {
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 60px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 24px;
+            font-size: 16px;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            background: var(--pure-white);
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-black);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-500);
+        }
+
+        /* Filter Pills */
+        .filter-section {
             margin-bottom: 48px;
         }
 
-        .card {
-            background: var(--pure-white);
-            border: 1px solid var(--gray-100);
-            border-radius: 12px;
-            padding: 32px;
-            margin-bottom: 24px;
-        }
-
-        .card h3 {
-            font-size: 24px;
+        .filter-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-700);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             margin-bottom: 16px;
         }
 
-        .card p {
-            color: var(--gray-700);
-            line-height: 1.7;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 32px;
-        }
-
-        .feature {
-            background: var(--off-white);
-            padding: 24px;
-            border-radius: 8px;
-        }
-
-        .feature h4 {
-            margin-bottom: 8px;
-            font-size: 18px;
-        }
-
-        .feature p {
-            font-size: 14px;
-            color: var(--gray-700);
-        }
-
-        .cta {
-            text-align: center;
-            margin-top: 64px;
-        }
-
-        .cta h3 {
-            font-size: 28px;
-            margin-bottom: 32px;
-        }
-
-        .cta-buttons {
+        .filter-pills {
             display: flex;
-            gap: 16px;
-            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .btn {
-            padding: 12px 32px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 500;
+        .pill {
+            padding: 8px 20px;
+            border: 1px solid var(--gray-300);
+            border-radius: 24px;
+            background: var(--pure-white);
+            font-size: 14px;
             cursor: pointer;
             transition: all 0.2s;
-            border: 2px solid transparent;
         }
 
-        .btn-primary {
+        .pill:hover {
+            border-color: var(--primary-black);
+            background: var(--gray-100);
+        }
+
+        .pill.active {
             background: var(--primary-black);
             color: var(--pure-white);
             border-color: var(--primary-black);
         }
 
-        .btn-primary:hover {
-            background: var(--gray-950);
-            border-color: var(--gray-950);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-black);
-            border-color: var(--gray-300);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--primary-black);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* User stories grid */
-        .stories-grid {
+        /* Interview Grid */
+        .interviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 24px;
-            margin-top: 32px;
+            margin-bottom: 80px;
         }
 
-        .story-card {
+        .interview-card {
             background: var(--pure-white);
             border: 1px solid var(--gray-100);
             border-radius: 12px;
-            padding: 24px;
+            overflow: hidden;
             cursor: pointer;
             transition: all 0.2s;
         }
 
-        .story-card:hover {
-            border-color: var(--gray-300);
+        .interview-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
         }
 
-        .story-card h4 {
-            font-size: 18px;
-            margin-bottom: 8px;
+        .video-thumbnail {
+            position: relative;
+            padding-bottom: 56.25%;
+            background: var(--gray-100);
         }
 
-        .story-meta {
-            color: var(--gray-700);
-            font-size: 14px;
-            margin-bottom: 16px;
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
         }
 
-        .story-quote {
-            font-style: italic;
-            color: var(--gray-900);
-            margin-bottom: 16px;
-            line-height: 1.6;
+        .duration {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
         }
 
-        .story-impact {
-            font-size: 14px;
-            color: var(--gray-700);
-            font-weight: 500;
-        }
-
-        /* Connection view */
-        .connection-display {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 32px;
-            align-items: start;
-            margin: 48px 0;
-        }
-
-        .user-card {
-            background: var(--pure-white);
-            border: 1px solid var(--gray-100);
-            border-radius: 12px;
+        .interview-content {
             padding: 24px;
         }
 
-        .user-card h3 {
-            font-size: 20px;
+        .interview-title {
+            font-size: 18px;
+            font-weight: 600;
             margin-bottom: 8px;
+            line-height: 1.3;
         }
 
-        .user-role {
-            font-size: 16px;
-            color: var(--gray-900);
+        .interview-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--gray-700);
+        }
+
+        .interview-role {
             font-weight: 500;
         }
 
-        .user-company {
-            font-size: 14px;
-            color: var(--gray-700);
-            margin-bottom: 16px;
-        }
-
-        .tags {
+        .interview-tags {
             display: flex;
-            flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 16px;
+            flex-wrap: wrap;
         }
 
         .tag {
-            background: var(--off-white);
-            padding: 4px 12px;
-            border-radius: 4px;
             font-size: 12px;
+            padding: 4px 12px;
+            background: var(--gray-100);
+            border-radius: 4px;
             color: var(--gray-700);
         }
 
-        .connecting-dots {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            padding: 32px 0;
-        }
-
-        .dot {
-            width: 6px;
-            height: 6px;
-            background: var(--gray-300);
+        /* Chat Interface */
+        .chat-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 64px;
+            height: 64px;
+            background: var(--primary-black);
+            color: var(--pure-white);
             border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s;
         }
 
-        .connection-insight {
-            background: var(--off-white);
-            border-left: 3px solid var(--primary-black);
-            padding: 24px;
-            margin: 32px 0;
-            border-radius: 4px;
+        .chat-button:hover {
+            transform: scale(1.05);
         }
 
-        .connection-insight h3 {
-            font-size: 20px;
+        .chat-window {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            width: 380px;
+            height: 500px;
+            background: var(--pure-white);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-window.open {
+            display: flex;
+        }
+
+        .chat-header {
+            padding: 20px;
+            background: var(--primary-black);
+            color: var(--pure-white);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .message {
             margin-bottom: 16px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
-        .connection-insight p {
-            color: var(--gray-900);
-            line-height: 1.7;
+        .message.bot {
+            background: var(--gray-100);
+            margin-right: 40px;
+        }
+
+        .message.user {
+            background: var(--primary-black);
+            color: var(--pure-white);
+            margin-left: 40px;
+            text-align: right;
+        }
+
+        .chat-input {
+            padding: 16px;
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            gap: 12px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid var(--gray-300);
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .chat-input button {
+            padding: 8px 16px;
+            background: var(--primary-black);
+            color: var(--pure-white);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.open {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--pure-white);
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .video-section {
+            flex: 1;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .transcript-section {
+            width: 400px;
+            background: var(--off-white);
+            padding: 32px;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .interviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                flex-direction: column;
+            }
+            
+            .transcript-section {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <h1>Claude Voices</h1>
-        <p>Real stories from Claude users transforming their work</p>
-        <nav class="nav">
-            <button class="active" onclick="showSection('home')">About</button>
-            <button onclick="showSection('stories')">Stories</button>
-            <button onclick="showSection('connections')">Connections</button>
-        </nav>
+        <div class="header-content">
+            <div class="logo">Claude Voices</div>
+            <nav class="header-nav">
+                <a href="#interviews">Interviews</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Home Section -->
-    <section id="home" class="container">
-        <div class="hero">
-            <h2>Every professional has a Claude story.<br>Every story shows a new possibility.</h2>
-            <p>Discover how people across industries use Claude to amplify their capabilities and achieve what wasn't possible before.</p>
-        </div>
+    <main>
+        <section class="hero container">
+            <h1>Learn from Claude Super Users</h1>
+            <p>Watch Jason and Reed from Anthropic interview top professionals about how they're transforming their work with Claude</p>
+        </section>
 
-        <div class="section">
-            <div class="card">
-                <h3>What is Claude?</h3>
-                <p>Claude is an AI assistant created by Anthropic that helps professionals think more clearly, work more efficiently, and solve complex problems. From writing and analysis to coding and research, Claude adapts to how you work.</p>
+        <div class="container">
+            <!-- Search -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search interviews, roles, or use cases...">
+                <span class="search-icon">🔍</span>
             </div>
 
-            <div class="card">
-                <h3>Why Claude Voices?</h3>
-                <p>Behind every Claude interaction is a human with a goal. A designer trying to solve a UX challenge. An engineer debugging complex code. A researcher connecting disparate studies. Claude Voices shares these stories to inspire your own journey.</p>
+            <!-- Filters -->
+            <div class="filter-section">
+                <div class="filter-label">Browse by Role</div>
+                <div class="filter-pills">
+                    <div class="pill active" onclick="filterBy('all')">All</div>
+                    <div class="pill" onclick="filterBy('design')">Design</div>
+                    <div class="pill" onclick="filterBy('marketing')">Marketing</div>
+                    <div class="pill" onclick="filterBy('finance')">Finance</div>
+                    <div class="pill" onclick="filterBy('legal')">Legal</div>
+                    <div class="pill" onclick="filterBy('developer')">Developers</div>
+                    <div class="pill" onclick="filterBy('athlete')">Athletes</div>
+                    <div class="pill" onclick="filterBy('musician')">Musicians</div>
+                    <div class="pill" onclick="filterBy('writer')">Writers</div>
+                    <div class="pill" onclick="filterBy('researcher')">Researchers</div>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Featured Use Cases</h3>
-                <div class="features-grid">
-                    <div class="feature">
-                        <h4>Claude Code</h4>
-                        <p>Engineers ship features 2-3x faster with intelligent code assistance</p>
+            <!-- Interview Cards -->
+            <div class="interviews-grid" id="interviews">
+                <!-- Design -->
+                <div class="interview-card" data-category="design" onclick="openModal('sarah')">
+                    <div class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <div class="duration">28:34</div>
                     </div>
-                    <div class="feature">
-                        <h4>Research & Analysis</h4>
-                        <p>Researchers find patterns across thousands of documents instantly</p>
+                    <div class="interview-content">
+                        <h3 class="interview-title">How DoorDash's Lead Designer Uses Claude to Ship 10x Faster</h3>
+                        <div class="interview-meta">
+                            <span class="interview-role">Sarah Chen</span>
+                            <span>•</span>
+                            <span>Product Design Lead</span>
+                        </div>
+                        <div class="interview-tags">
+                            <span class="tag">Design Systems</span>
+                            <span class="tag">Prototyping</span>
+                            <span class="tag">User Research</span>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <h4>Creative Work</h4>
-                        <p>Writers and designers break through creative blocks with AI collaboration</p>
+                </div>
+
+                <!-- Developer -->
+                <div class="interview-card" data-category="developer" onclick="openModal('marcus')">
+                    <div class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <div class="duration">35:12</div>
+                    </div>
+                    <div class="interview-content">
+                        <h3 class="interview-title">Stripe Engineer: "Claude Code Changed Everything"</h3>
+                        <div class="interview-meta">
+                            <span class="interview-role">Marcus Rodriguez</span>
+                            <span>•</span>
+                            <span>Staff Engineer</span>
+                        </div>
+                        <div class="interview-tags">
+                            <span class="tag">Architecture</span>
+                            <span class="tag">Code Review</span>
+                            <span class="tag">Testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Finance -->
+                <div class="interview-card" data-category="finance" onclick="openModal('jessica')">
+                    <div class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <div class="duration">31:45</div>
+                    </div>
+                    <div class="interview-content">
+                        <h3 class="interview-title">Goldman Sachs VP on Using Claude for Financial Analysis</h3>
+                        <div class="interview-meta">
+                            <span class="interview-role">Jessica Park</span>
+                            <span>•</span>
+                            <span>Vice President</span>
+                        </div>
+                        <div class="interview-tags">
+                            <span class="tag">Financial Modeling</span>
+                            <span class="tag">Risk Analysis</span>
+                            <span class="tag">Reports</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal -->
+                <div class="interview-card" data-category="legal" onclick="openModal('david')">
+                    <div class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <div class="duration">26:18</div>
+                    </div>
+                    <div class="interview-content">
+                        <h3 class="interview-title">How This Legal Team Cut Contract Review Time by 70%</h3>
+                        <div class="interview-meta">
+                            <span class="interview-role">David Thompson</span>
+                            <span>•</span>
+                            <span>General Counsel</span>
+                        </div>
+                        <div class="interview-tags">
+                            <span class="tag">Contract Review</span>
+                            <span class="tag">Compliance</span>
+                            <span class="tag">Legal Research</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Athlete -->
+                <div class="interview-card" data-category="athlete" onclick="openModal('maya')">
+                    <div class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <div class="duration">22:30</div>
+                    </div>
+                    <div class="interview-content">
+                        <h3 class="interview-title">Olympic Runner Uses Claude for Training Optimization</h3>
+                        <div class="interview-meta">
+                            <span class="interview-role">Maya Williams</span>
+                            <span>•</span>
+                            <span>Olympic Athlete</span>
+                        </div>
+                        <div class="interview-tags">
+                            <span class="tag">Performance Analysis</span>
+                            <span class="tag">Training Plans</span>
+                            <span class="tag">Nutrition</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Musician -->
+                <div class="interview-card" data-category="musician" onclick="openModal('alex')">
+                    <div class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <div class="duration">29:45</div>
+                    </div>
+                    <div class="interview-content">
+                        <h3 class="interview-title">Grammy Winner's Creative Process with Claude</h3>
+                        <div class="interview-meta">
+                            <span class="interview-role">Alex Rivers</span>
+                            <span>•</span>
+                            <span>Music Producer</span>
+                        </div>
+                        <div class="interview-tags">
+                            <span class="tag">Songwriting</span>
+                            <span class="tag">Production</span>
+                            <span class="tag">Music Theory</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing -->
+                <div class="interview-card" data-category="marketing" onclick="openModal('lisa')">
+                    <div class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <div class="duration">33:20</div>
+                    </div>
+                    <div class="interview-content">
+                        <h3 class="interview-title">Netflix Marketing Lead: Claude as Creative Partner</h3>
+                        <div class="interview-meta">
+                            <span class="interview-role">Lisa Chang</span>
+                            <span>•</span>
+                            <span>Sr. Marketing Manager</span>
+                        </div>
+                        <div class="interview-tags">
+                            <span class="tag">Campaigns</span>
+                            <span class="tag">Analytics</span>
+                            <span class="tag">Content Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Researcher -->
+                <div class="interview-card" data-category="researcher" onclick="openModal('dr-patel')">
+                    <div class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <div class="duration">38:15</div>
+                    </div>
+                    <div class="interview-content">
+                        <h3 class="interview-title">MIT Researcher: Accelerating Discovery with Claude</h3>
+                        <div class="interview-meta">
+                            <span class="interview-role">Dr. Priya Patel</span>
+                            <span>•</span>
+                            <span>Research Scientist</span>
+                        </div>
+                        <div class="interview-tags">
+                            <span class="tag">Literature Review</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Grant Writing</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </main>
 
-        <div class="cta">
-            <h3>Ready to explore Claude success stories?</h3>
-            <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="showSection('stories')">Explore Stories</button>
-                <button class="btn btn-secondary" onclick="showSection('connections')">See Connections</button>
+    <!-- Chat Interface -->
+    <button class="chat-button" onclick="toggleChat()">💬</button>
+    
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <span>Find the right interview</span>
+            <button onclick="toggleChat()" style="background:none;border:none;color:white;cursor:pointer;">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">Hi! I can help you find relevant interviews. What role or use case are you interested in?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type your question..." onkeypress="handleChatKeypress(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <button class="close-modal" onclick="closeModal()">✕</button>
+        <div class="modal-content">
+            <div class="video-section">
+                <div style="color: white; text-align: center;">
+                    <div style="font-size: 48px; margin-bottom: 16px;">▶</div>
+                    <p>Video Player Placeholder</p>
+                </div>
+            </div>
+            <div class="transcript-section">
+                <h3 style="margin-bottom: 24px;">Transcript</h3>
+                <div id="transcriptContent">
+                    <p style="margin-bottom: 16px;"><strong>Jason (00:00):</strong> Welcome to Claude Voices. I'm Jason from Anthropic, and today we're talking with Sarah Chen, Product Design Lead at DoorDash. Sarah, tell us about your journey with Claude.</p>
+                    
+                    <p style="margin-bottom: 16px;"><strong>Sarah (00:12):</strong> Thanks Jason! I started using Claude about six months ago when I was stuck on a particularly complex driver dashboard redesign...</p>
+                    
+                    <p style="margin-bottom: 16px;"><strong>Reed (00:28):</strong> That's fascinating. Can you walk us through your specific workflow?</p>
+                    
+                    <p style="margin-bottom: 16px;"><strong>Sarah (00:35):</strong> Absolutely. I usually start by describing the problem to Claude in plain language. For example, "I need to design a dashboard that shows earnings, upcoming deliveries, and performance metrics, but drivers only glance at it for 2-3 seconds while driving..."</p>
+                    
+                    <p style="margin-bottom: 16px;"><strong>Jason (01:02):</strong> And how does Claude help with that constraint?</p>
+                    
+                    <p style="margin-bottom: 16px;"><strong>Sarah (01:08):</strong> Claude immediately understood the safety and cognitive load implications. It suggested a hierarchy based on urgency and frequency of use, even proposing specific visual patterns that work well for quick glances...</p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Stories Section -->
-    <section id="stories" class="container hidden">
-        <div class="hero">
-            <h2>Success Stories</h2>
-            <p>Real professionals sharing how Claude transforms their work</p>
-        </div>
-
-        <div class="stories-grid">
-            <div class="story-card" onclick="showStoryDetail('sarah')">
-                <h4>Sarah Chen - Product Designer</h4>
-                <div class="story-meta">DoorDash, San Francisco</div>
-                <div class="story-quote">"Claude helps me iterate on designs 10x faster. I describe what I want, and it generates React components I can test immediately."</div>
-                <div class="story-impact">Impact: Reduced design-to-prototype time from days to hours</div>
-            </div>
-
-            <div class="story-card" onclick="showStoryDetail('marcus')">
-                <h4>Marcus Johnson - Marketing Manager</h4>
-                <div class="story-meta">Grab, Singapore</div>
-                <div class="story-quote">"I use Claude to analyze campaign performance and generate insights across markets. It spots patterns I would have missed."</div>
-                <div class="story-impact">Impact: Increased campaign ROI by 35%</div>
-            </div>
-
-            <div class="story-card" onclick="showStoryDetail('emily')">
-                <h4>Dr. Emily Rodriguez - Research Scientist</h4>
-                <div class="story-meta">Stanford University, Palo Alto</div>
-                <div class="story-quote">"Claude helps me review literature and find connections between papers. It's like having a brilliant research assistant."</div>
-                <div class="story-impact">Impact: Published 3 papers in half the usual time</div>
-            </div>
-
-            <div class="story-card" onclick="showStoryDetail('james')">
-                <h4>James Park - Software Engineer</h4>
-                <div class="story-meta">Stripe, New York</div>
-                <div class="story-quote">"Claude Code transformed how I work. I describe the feature, and it helps me implement it with best practices."</div>
-                <div class="story-impact">Impact: Ships features 2x faster with fewer bugs</div>
-            </div>
-
-            <div class="story-card" onclick="showStoryDetail('lisa')">
-                <h4>Lisa Thompson - Legal Counsel</h4>
-                <div class="story-meta">Tech Startup, Austin</div>
-                <div class="story-quote">"I use Claude to review contracts and spot issues. It catches things that might take hours to find manually."</div>
-                <div class="story-impact">Impact: Reduced contract review time by 60%</div>
-            </div>
-
-            <div class="story-card" onclick="showStoryDetail('alex')">
-                <h4>Alex Rivera - Content Strategist</h4>
-                <div class="story-meta">B2B SaaS, Remote</div>
-                <div class="story-quote">"Claude helps me understand complex technical topics and translate them into clear content our customers understand."</div>
-                <div class="story-impact">Impact: 3x increase in content engagement</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Connections Section -->
-    <section id="connections" class="container hidden">
-        <div class="hero">
-            <h2>Unexpected Connections</h2>
-            <p>See how professionals in different fields use Claude in surprisingly similar ways</p>
-        </div>
-
-        <div id="connectionDisplay"></div>
-        
-        <div class="cta">
-            <button class="btn btn-primary" onclick="showRandomConnection()">Show Another Connection</button>
-        </div>
-    </section>
+    </div>
 
     <script>
-        const connections = [
-            {
-                user1: {
-                    name: "Sarah Chen",
-                    role: "Product Designer",
-                    company: "DoorDash",
-                    tags: ["Mobile Design", "User Research", "Prototyping"],
-                    story: "Uses Claude to rapidly prototype UI solutions and test with users"
-                },
-                user2: {
-                    name: "Marcus Rodriguez",
-                    role: "Backend Engineer",
-                    company: "Stripe",
-                    tags: ["Distributed Systems", "Payment Infrastructure", "Architecture"],
-                    story: "Uses Claude to refactor complex systems and catch edge cases"
-                },
-                insight: {
-                    title: "Both Use Claude to Accelerate Complex Technical Work",
-                    description: "Whether designing interfaces or architecting systems, these professionals use Claude to break through complexity and ship faster. Both describe Claude as a 'thought partner' that helps them see solutions they might have missed."
-                }
-            },
-            {
-                user1: {
-                    name: "Dr. Emily Watson",
-                    role: "Research Scientist",
-                    company: "Stanford Medical",
-                    tags: ["Neuroscience", "Grant Writing", "Publications"],
-                    story: "Analyzes research papers to find hidden connections between studies"
-                },
-                user2: {
-                    name: "Alex Thompson",
-                    role: "Marketing Manager",
-                    company: "B2B SaaS Startup",
-                    tags: ["Growth Marketing", "Data Analysis", "Content Strategy"],
-                    story: "Finds patterns in customer data to improve targeting"
-                },
-                insight: {
-                    title: "Both Use Claude to Find Hidden Patterns",
-                    description: "From academic research to market analysis, these professionals use Claude to surface insights hidden in information overload. Both made discoveries that fundamentally changed their approach."
-                }
-            }
-        ];
-
-        let currentConnectionIndex = 0;
-
-        function showSection(section) {
-            // Hide all sections
-            document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
-            // Show selected section
-            document.getElementById(section).classList.remove('hidden');
-            // Update nav
-            document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+        // Filter functionality
+        function filterBy(category) {
+            const pills = document.querySelectorAll('.pill');
+            const cards = document.querySelectorAll('.interview-card');
+            
+            // Update active pill
+            pills.forEach(pill => pill.classList.remove('active'));
             event.target.classList.add('active');
+            
+            // Show/hide cards
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
 
-            if (section === 'connections') {
-                showRandomConnection();
+        // Search functionality
+        document.querySelector('.search-input').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.interview-card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(searchTerm) ? 'block' : 'none';
+            });
+        });
+
+        // Chat functionality
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.classList.toggle('open');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messages = document.getElementById('chatMessages');
+            
+            if (input.value.trim()) {
+                // Add user message
+                messages.innerHTML += `<div class="message user">${input.value}</div>`;
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    const response = getBotResponse(input.value.toLowerCase());
+                    messages.innerHTML += `<div class="message bot">${response}</div>`;
+                    messages.scrollTop = messages.scrollHeight;
+                }, 500);
+                
+                input.value = '';
             }
         }
 
-        function showRandomConnection() {
-            const connection = connections[currentConnectionIndex];
-            currentConnectionIndex = (currentConnectionIndex + 1) % connections.length;
-
-            document.getElementById('connectionDisplay').innerHTML = `
-                <div class="connection-display">
-                    <div class="user-card">
-                        <h3>${connection.user1.name}</h3>
-                        <div class="user-role">${connection.user1.role}</div>
-                        <div class="user-company">${connection.user1.company}</div>
-                        <div class="tags">
-                            ${connection.user1.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                        </div>
-                        <p>${connection.user1.story}</p>
-                    </div>
-                    
-                    <div class="connecting-dots">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                    
-                    <div class="user-card">
-                        <h3>${connection.user2.name}</h3>
-                        <div class="user-role">${connection.user2.role}</div>
-                        <div class="user-company">${connection.user2.company}</div>
-                        <div class="tags">
-                            ${connection.user2.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                        </div>
-                        <p>${connection.user2.story}</p>
-                    </div>
-                </div>
-                
-                <div class="connection-insight">
-                    <h3>${connection.insight.title}</h3>
-                    <p>${connection.insight.description}</p>
-                </div>
-            `;
+        function handleChatKeypress(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
         }
 
-        function showStoryDetail(story) {
-            alert(`Full story coming soon! This would link to the complete ${story} case study.`);
+        function getBotResponse(query) {
+            if (query.includes('design')) {
+                return "I found 3 great interviews about design: Sarah Chen from DoorDash talks about rapid prototyping, and we have sessions on design systems and user research. Which aspect interests you most?";
+            } else if (query.includes('code') || query.includes('developer')) {
+                return "Check out Marcus Rodriguez from Stripe - he shares amazing insights on using Claude Code for architecture decisions and code reviews. We also have interviews with engineers from Google and Microsoft.";
+            } else if (query.includes('finance')) {
+                return "Jessica Park from Goldman Sachs has an excellent interview about financial modeling with Claude. She reduced analysis time by 80% while improving accuracy.";
+            } else {
+                return "I can help you find interviews by role (designer, developer, marketer), industry (tech, finance, healthcare), or use case (writing, analysis, coding). What would you like to explore?";
+            }
         }
+
+        // Modal functionality
+        function openModal(interviewId) {
+            document.getElementById('videoModal').classList.add('open');
+        }
+
+        function closeModal() {
+            document.getElementById('videoModal').classList.remove('open');
+        }
+
+        // Close modal on background click
+        document.getElementById('videoModal').addEventListener('click', (e) => {
+            if (e.target.id === 'videoModal') {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
